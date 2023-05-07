@@ -1,0 +1,33 @@
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnGreen FROM filteredGreen;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnAll FROM filteredAll;
+SELECT MAX(CAST(dailyReturn AS DOUBLE)) AS max_returnGreen FROM filteredGreen;
+SELECT MIN(CAST(dailyReturn AS DOUBLE)) AS min_returnGreen FROM filteredGreen;
+SELECT MAX(CAST(dailyReturn AS DOUBLE)) AS max_returnGreen FROM filteredAll;
+SELECT MIN(CAST(dailyReturn AS DOUBLE)) AS min_returnGreen FROM filteredAll;
+
+SELECT AVG(CAST(closingPrice AS DOUBLE)) AS average_closingGreen FROM filteredGreen;
+SELECT AVG(CAST(closingPrice AS DOUBLE)) AS average_closingAll FROM filteredAll;
+SELECT MAX(CAST(closingPrice AS DOUBLE)) AS max_closingGreen FROM filteredGreen;
+SELECT MAX(CAST(ClosingPrice AS DOUBLE)) AS max_closingAll FROM filteredAll;
+SELECT MIN(CAST(ClosingPrice AS DOUBLE)) AS min_closingAll FROM filteredAll;
+SELECT MIN(CAST(ClosingPrice AS DOUBLE)) AS min_closingGreen FROM filteredGreen;
+
+CREATE TABLE differenceTableGreen AS
+SELECT
+  CAST(openPrice AS DOUBLE) AS double_open,
+  CAST(closingPrice AS DOUBLE) AS double_close,
+  (CAST(openPrice AS DOUBLE) - CAST(closingPrice AS DOUBLE)) AS diff
+FROM
+  filteredGreen;
+
+CREATE TABLE differenceTableAll AS
+SELECT
+  CAST(openPrice AS DOUBLE) AS double_open,
+  CAST(closingPrice AS DOUBLE) AS double_close,
+  (CAST(openPrice AS DOUBLE) - CAST(closingPrice AS DOUBLE)) AS diff
+FROM
+  filteredAll;
+
+
+SELECT AVG(CAST(diff AS DOUBLE)) AS average_diffGreen FROM differenceTableGreen;
+SELECT AVG(CAST(diff AS DOUBLE)) AS average_diffAll FROM differenceTableAll;
