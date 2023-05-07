@@ -1,0 +1,24 @@
+CREATE TABLE filteredGreen AS
+SELECT *
+FROM greenStocks
+WHERE id IS NOT NULL
+AND dates IS NOT NULL
+AND openPrice IS NOT NULL AND (CASE WHEN openPrice RLIKE '^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$' THEN TRUE ELSE FALSE END)
+AND highestPrice IS NOT NULL AND (CASE WHEN highestPrice RLIKE '^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$' THEN TRUE ELSE FALSE END)
+AND lowestPrice IS NOT NULL AND (CASE WHEN lowestPrice RLIKE '^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$' THEN TRUE ELSE FALSE END)
+AND closingPrice IS NOT NULL AND (CASE WHEN closingPrice RLIKE '^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$' THEN TRUE ELSE FALSE END)
+AND dailyReturn IS NOT NULL AND (CASE WHEN dailyReturn RLIKE '^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$' THEN TRUE ELSE FALSE END);
+
+CREATE TABLE filteredAll AS
+SELECT *
+FROM allStocks
+WHERE id IS NOT NULL
+AND dates IS NOT NULL
+AND openPrice IS NOT NULL AND (CASE WHEN openPrice RLIKE '^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$' THEN TRUE ELSE FALSE END)
+AND highestPrice IS NOT NULL AND (CASE WHEN highestPrice RLIKE '^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$' THEN TRUE ELSE FALSE END)
+AND lowestPrice IS NOT NULL AND (CASE WHEN lowestPrice RLIKE '^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$' THEN TRUE ELSE FALSE END)
+AND closingPrice IS NOT NULL AND (CASE WHEN closingPrice RLIKE '^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$' THEN TRUE ELSE FALSE END)
+AND dailyReturn IS NOT NULL AND (CASE WHEN dailyReturn RLIKE '^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$' THEN TRUE ELSE FALSE END);
+
+
+
