@@ -1,0 +1,146 @@
+CREATE TABLE Jan_table AS
+SELECT *
+FROM filteredAll
+WHERE CAST(substr(dates, 6, 1) AS INT) = 1;
+
+CREATE TABLE Feb_table AS
+SELECT *
+FROM filteredAll
+WHERE CAST(substr(dates, 6, 1) AS INT) = 2;
+
+CREATE TABLE Mar_table AS
+SELECT *
+FROM filteredAll
+WHERE CAST(substr(dates, 6, 1) AS INT) = 3;
+
+CREATE TABLE Apr_table AS
+SELECT *
+FROM filteredAll
+WHERE CAST(substr(dates, 6, 1) AS INT) = 4;
+
+CREATE TABLE May_table AS
+SELECT *
+FROM filteredAll
+WHERE CAST(substr(dates, 6, 1) AS INT) = 5;
+
+CREATE TABLE June_table AS
+SELECT *
+FROM filteredAll
+WHERE CAST(substr(dates, 6, 1) AS INT) = 6;
+
+CREATE TABLE July_table AS
+SELECT *
+FROM filteredAll
+WHERE CAST(substr(dates, 6, 1) AS INT) = 7;
+
+CREATE TABLE Aug_table AS
+SELECT *
+FROM filteredAll
+WHERE CAST(substr(dates, 6, 1) AS INT) = 8;
+
+CREATE TABLE Sep_table AS
+SELECT *
+FROM filteredAll
+WHERE CAST(substr(dates, 6, 1) AS INT) = 9;
+
+CREATE TABLE Oct_table AS
+SELECT *
+FROM filteredAll
+WHERE CAST(substr(dates, 6, 2) AS INT) = 10;
+
+CREATE TABLE Nov_table AS
+SELECT *
+FROM filteredAll
+WHERE CAST(substr(dates, 6, 2) AS INT) = 11;
+
+CREATE TABLE Dec_table AS
+SELECT *
+FROM filteredAll
+WHERE CAST(substr(dates, 6, 2) AS INT) = 12;
+
+
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnAllJan FROM Jan_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnAllFeb FROM Feb_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnAllMar FROM Mar_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnAllApr FROM Apr_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnAllMay FROM May_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnAllJune FROM June_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnAllJuly FROM July_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnAllAug FROM Aug_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnAllSep FROM Sep_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnAllOct FROM Oct_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnAllNov FROM Nov_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnAllDec FROM Dec_table;
+
+CREATE TABLE JanG_table AS
+SELECT *
+FROM filteredGreen
+WHERE CAST(substr(dates, 6, 1) AS INT) = 1;
+
+CREATE TABLE FebG_table AS
+SELECT *
+FROM filteredGreen
+WHERE CAST(substr(dates, 6, 1) AS INT) = 2;
+
+CREATE TABLE MarG_table AS
+SELECT *
+FROM filteredGreen
+WHERE CAST(substr(dates, 6, 1) AS INT) = 3;
+
+CREATE TABLE AprG_table AS
+SELECT *
+FROM filteredGreen
+WHERE CAST(substr(dates, 6, 1) AS INT) = 4;
+
+CREATE TABLE MayG_table AS
+SELECT *
+FROM filteredGreen
+WHERE CAST(substr(dates, 6, 1) AS INT) = 5;
+
+CREATE TABLE JuneG_table AS
+SELECT *
+FROM filteredGreen
+WHERE CAST(substr(dates, 6, 1) AS INT) = 6;
+
+CREATE TABLE JulyG_table AS
+SELECT *
+FROM filteredGreen
+WHERE CAST(substr(dates, 6, 1) AS INT) = 7;
+
+CREATE TABLE AugG_table AS
+SELECT *
+FROM filteredGreen
+WHERE CAST(substr(dates, 6, 1) AS INT) = 8;
+
+CREATE TABLE SepG_table AS
+SELECT *
+FROM filteredGreen
+WHERE CAST(substr(dates, 6, 1) AS INT) = 9;
+
+CREATE TABLE OctG_table AS
+SELECT *
+FROM filteredGreen
+WHERE CAST(substr(dates, 6, 2) AS INT) = 10;
+
+CREATE TABLE NovG_table AS
+SELECT *
+FROM filteredGreen
+WHERE CAST(substr(dates, 6, 2) AS INT) = 11;
+
+CREATE TABLE DecG_table AS
+SELECT *
+FROM filteredGreen
+WHERE CAST(substr(dates, 6, 2) AS INT) = 12;
+
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnGreenJan FROM JanG_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnGreenFeb FROM FebG_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnGreenMar FROM MarG_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnGreenApr FROM AprG_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnGreenMay FROM MayG_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnGreenJune FROM JuneG_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnGreenJuly FROM JulyG_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnGreenAug FROM AugG_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnGreenSep FROM SepG_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnGreenOct FROM OctG_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnGreenNov FROM NovG_table;
+SELECT AVG(CAST(dailyReturn AS DOUBLE)) AS average_returnGreenDec FROM DecG_table;
