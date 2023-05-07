@@ -1,0 +1,37 @@
+hdfs dfs -mkdir data_ingest
+hdfs dfs -put all_green_stocks.csv data_ingest
+hdfs dfs -put dataForAllStocks.csv data_ingest
+
+beeline -u jdbc:hive2://localhost:10000
+
+users7384_nyu_edu;
+
+CREATE TABLE allStocks(
+  id STRING, 
+  dates STRING, 
+  openPrice STRING, 
+  highestPrice STRING, 
+  lowestPrice STRING, 
+  closingPrice STRING, 
+  dailyReturn STRING 
+) 
+ROW FORMAT DELIMITED 
+FIELDS TERMINATED BY ',' 
+STORED AS TEXTFILE 
+LOCATION 'hdfs://nyu-dataproc-m/user/rs7384_nyu_edu/data_ingest/allStocksTable'; LOAD DATA INPATH 'hdfs://nyu-dataproc-m/user/rs7384_nyu_edu/data_ingest/dataForAllStocks.csv' INTO TABLE allStocks;
+
+
+
+CREATE TABLE greenStocks(
+  id STRING, 
+ dates STRING, 
+ openPrice STRING, 
+ highestPrice STRING, 
+ lowestPrice STRING, 
+ closingPrice STRING, 
+ dailyReturn STRING 
+ ) 
+ROW FORMAT DELIMITED 
+FIELDS TERMINATED BY ',' 
+STORED AS TEXTFILE 
+LOCATION 'hdfs://nyu-dataproc-m/user/rs7384_nyu_edu/data_ingest/greeenStockTable'; LOAD DATA INPATH 'hdfs://nyu-dataproc-m/user/rs7384_nyu_edu/data_ingest/all_green_stocks.csv' INTO TABLE greenStocks;
