@@ -20,8 +20,3 @@ the second part is data cleaning: the original data contains chinese character a
 the third part is year data analysis, in this part, we will use one year data, which is the filtered version of these two datasets. I use hive command to get the mean, max, min of the whole market and green stocks. Then I want to get the difference between open and close price. This difference is only deisgned for one year part. Because one month' volatility is not a good index to use. So I will only use one year difference to examine green stocks' volatility. I create two diffrence table first, and get the average of difference in both side. Then I can know whether the volatility of market is higher or the green stocks' is higher.
 
 The fourth part mainly focuses on month data. For getting month data, I divided these two filtered table into 12 pieces. Create 12 tables for each filtered table. So I created 24 tables in total. For every monthly table, I need the average return for each of month table for comparision so I can see in which month green stocks have better performance which month it has poor performance. 
-
-the fifth part is just screenshots for all detailed command which is also in each directory's txt file. The real circumstance when the code is running in dataproc's Hive.
-
-NOTE: (1)I forget to take screenshot for original two tables' directory, the screenshots in data ingestion for create two directory for two original table is just for showing, the real direcotry are allStocksTable, greeenStocksTable. Same as what in the screenshots in creating hive table.
-      (2)In the previous submission I don't know I need to include the data generating process pictures. I spoke with professor with regards to documentation for the data source in the code drop.
