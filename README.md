@@ -1,4 +1,4 @@
-# Ruiming-Shen
+# Hive ql code for 2022 A share market stock analytic
 Hive ql code for 2022 A share market stock analytic
 cs476 Ruiming Shen Stock Project:
 
