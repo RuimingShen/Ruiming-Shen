@@ -7,7 +7,6 @@ This project is divided into 5 parts.
 2. etl_code(Data cleaning)
 3. profiling_code(year data analysis)
 4. ana_code(Month data analysis)
-5. screenshot of all the output for every step on dataproc.
 
 Must following this order for all the numbers and results.
 
@@ -21,7 +20,3 @@ the third part is year data analysis, in this part, we will use one year data, w
 
 The fourth part mainly focuses on month data. For getting month data, I divided these two filtered table into 12 pieces. Create 12 tables for each filtered table. So I created 24 tables in total. For every monthly table, I need the average return for each of month table for comparision so I can see in which month green stocks have better performance which month it has poor performance. 
 
-the fifth part is just screenshots for all detailed command which is also in each directory's txt file. The real circumstance when the code is running in dataproc's Hive.
-
-NOTE: (1)I forget to take screenshot for original two tables' directory, the screenshots in data ingestion for create two directory for two original table is just for showing, the real direcotry are allStocksTable, greeenStocksTable. Same as what in the screenshots in creating hive table.
-      (2)In the previous submission I don't know I need to include the data generating process pictures. I spoke with professor with regards to documentation for the data source in the code drop.
